@@ -48,7 +48,12 @@
     function randomHole(holes) {
       const idx = Math.floor(Math.random() * holes.length);
       const hole = holes[idx];
-      console.log(hole);
+      if (hole === lastHole) {
+        console.log('Ahhh');
+        return randomHole(holes)
+      }
+      lastHole = hole;
+      return hole;
     }
   </script>
 </body>
